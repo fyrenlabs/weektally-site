@@ -1,0 +1,41 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches: [main]
+
+jobs:
+  deploy:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Publish an allowlist, not the repository: a new file at the root stays
+      # unpublished unless someone adds it here on purpose (the lesson of
+      # fyrenlabs/fyren#149).
+      - name: Package the site (allowlist)
+        run: |
+          mkdir -p _site
+          cp -R index.html demo.html 404.html forward.js site.css robots.txt staticwebapp.config.json assets _site/
+          echo "Publishing:"; (cd _site && find . -type f | sort)
+      - uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: _site
+          api_location: ""
+          output_location: ""
+          skip_app_build: true
+
+  close_preview:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: close

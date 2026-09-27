@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="/forward.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weektally — timesheets and resource planning</title>
+<meta name="description" content="Weektally puts the plan and the timesheet in one place: weeks that start filled in from the plan, a planning grid that shows who has room, and a review of plan against actual.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<meta property="og:title" content="Weektally — timesheets and resource planning">
+<meta property="og:description" content="The plan and the timesheet in one place.">
+<meta property="og:type" content="website">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Weektally home">
+      <svg viewBox="0 0 34 28" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round" fill="none"><line x1="4" y1="4" x2="4" y2="24"/><line x1="11" y1="4" x2="11" y2="24"/><line x1="18" y1="4" x2="18" y2="24"/><line x1="25" y1="4" x2="25" y2="24"/><line x1="0.5" y1="21" x2="29" y2="7"/></g></svg>
+      <span>week<b>tally</b></span>
+    </a>
+    <nav aria-label="Main">
+      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="/demo.html">Demo</a>
+      <a class="btn-light" href="https://weektally.app/">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Timesheets · Resource planning</p>
+        <h1>The plan and the timesheet, in one place.</h1>
+        <p class="lede">Your team's week starts filled in from the plan. Managers see who has room before they book them. And at the end of the month, plan and actual sit side by side.</p>
+        <div class="cta">
+          <a class="btn" href="/demo.html">Try the demo</a>
+          <a class="btn ghost" href="#features">See what it does</a>
+        </div>
+      </div>
+
+      <figure class="weekcard" aria-label="An example week in Weektally">
+        <div class="wc-head">
+          <strong>My week · 21–25 Sep</strong>
+          <span class="chip ok">✓ Submitted</span>
+        </div>
+        <div class="wc-grid" role="presentation">
+          <div class="t h"><span class="lg">PROJECT · </span>TASK</div><div class="h">MON</div><div class="h">TUE</div><div class="h">WED</div><div class="h">THU</div><div class="h">FRI</div><div class="h">TOTAL</div>
+          <div class="t">Coral Line<small>Berth planning</small></div><div>7.6</div><div>7.6</div><div>4</div><div>4</div><div class="dash">–</div><div class="tot">23.2</div>
+          <div class="t">Port operations<small>Rostering</small></div><div class="dash">–</div><div class="dash">–</div><div>3.6</div><div>3.6</div><div class="dash">–</div><div class="tot">7.2</div>
+          <div class="t">Public holiday<small><span class="chip ph">PH</span> Grand Final Friday</small></div><div class="dash">–</div><div class="dash">–</div><div class="dash">–</div><div class="dash">–</div><div class="hol">7.6</div><div class="tot">7.6</div>
+        </div>
+        <div class="wc-foot">
+          <div class="bar" aria-hidden="true"><i></i></div>
+          <b>38.0 h</b>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="alt" id="features">
+    <div class="wrap">
+      <h2>Built for the people who fill it in, and the people who plan it</h2>
+      <p class="sub">One app with two sides. People see their own week. Managers get the plan, the projects and the review.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="who">Everyone</div>
+          <h3>A week that starts filled in</h3>
+          <p>Planned work appears as rows before you type a thing, and public holidays fill themselves in: national ones, and regional ones such as a state holiday. Correct what changed, then submit.</p>
+        </div>
+        <div class="feature">
+          <div class="who">Managers</div>
+          <h3>Plan like a spreadsheet</h3>
+          <p>Type, drag across people or weeks, and move with the keyboard. Remaining capacity sits right in the grid, and anyone booked over 100% is flagged the moment it happens. View it by project or by person.</p>
+        </div>
+        <div class="feature">
+          <div class="who">Managers</div>
+          <h3>Today: only what needs you</h3>
+          <p>People booked over 100%, project needs nobody has filled, missing timesheets, and months ahead that are already over-committed. When there's nothing to do, it's empty.</p>
+        </div>
+        <div class="feature">
+          <div class="who">Project leads</div>
+          <h3>Projects that ask for people</h3>
+          <p>A timeline with milestones, plus requests for a named person, or for whoever is free. Bring a plan in from Microsoft Project, or as CSV from Asana, Monday.com, Smartsheet, Jira or Planner.</p>
+        </div>
+        <div class="feature">
+          <div class="who">Managers</div>
+          <h3>Plan against actual</h3>
+          <p>Review shows which projects are burning faster than planned, by project or by person. It also shows who hasn't submitted, and how committed the coming months already are.</p>
+        </div>
+        <div class="feature">
+          <div class="who">Everyone</div>
+          <h3>Weekends, your way</h3>
+          <p>Choose Monday to Friday only, a small "+" to add Saturday or Sunday when it happens, or a full seven-day week for teams that work weekends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>Fits how your organisation already works</h2>
+        <p class="sub">Weektally follows your organisation's structure and rules instead of adding new ones.</p>
+      </div>
+      <ul class="ticks">
+        <li><strong>Sign in with Microsoft.</strong> Your team uses the work accounts they already have, and your IT decides who is a manager or an admin.</li>
+        <li><strong>Managers plan their own people.</strong> Line managers and project owners each see and plan only the people and projects in their area.</li>
+        <li><strong>Contracts are respected.</strong> Part-time hours, contractors on fixed hours, and different working weeks by country all feed capacity.</li>
+        <li><strong>Your data stays in the EU.</strong> Timesheets and plans are stored in Sweden.</li>
+        <li><strong>Works on a phone.</strong> Filling in a week takes a minute, wherever you are.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>See it with a company already in it</h2>
+      <p>Three fictional companies, each with a story on every screen. Sign in as an employee, a manager or an admin.</p>
+      <a class="btn" href="/demo.html">Try the demo</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Weektally · by Fyren Labs</span>
+    <span><a href="/demo.html">Demo</a> · <a href="https://weektally.app/">Sign in</a></span>
+  </div>
+</footer>
+</body>
+</html>

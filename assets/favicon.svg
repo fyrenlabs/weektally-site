@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Standalone: an SVG favicon renders outside the page, so currentColor
+       is unavailable and the Fjord accent is set explicitly. Strokes are
+       heavier and the group tighter than the full mark so the five strokes
+       stay countable at 16px. -->
+  <rect width="32" height="32" rx="7" fill="#175A63"/>
+  <g stroke="#F7F4EE" stroke-width="2.9" stroke-linecap="round" fill="none">
+    <line x1="8"   y1="8"  x2="8"  y2="24"/>
+    <line x1="14"  y1="8"  x2="14" y2="24"/>
+    <line x1="20"  y1="8"  x2="20" y2="24"/>
+    <line x1="26"  y1="8"  x2="26" y2="24"/>
+    <line x1="5.5" y1="21" x2="28.5" y2="11"/>
+  </g>
+</svg>
