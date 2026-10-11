@@ -138,6 +138,38 @@ ul.ticks strong { color: var(--ink); }
 .note { background: var(--accent-soft); border-radius: var(--r); padding: 18px 20px; color: var(--ink); margin-bottom: 32px; }
 .note p { margin: 0; }
 
+/* ── Trial request form (demo.html) ─────────────────────────────────────── */
+.fine { font-size: 14px; color: var(--dim); max-width: 34em; }
+form.trial { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; display: grid; gap: 14px; }
+form.trial label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+form.trial .opt { font-weight: 400; color: var(--dim); }
+form.trial input, form.trial select, form.trial textarea {
+  font: inherit; font-weight: 400; font-size: 16px; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line-strong); border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+form.trial textarea { resize: vertical; }
+form.trial .btn { justify-self: start; }
+form.trial button:disabled { opacity: .6; cursor: progress; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.msg { border-radius: 10px; padding: 12px 14px; font-weight: 600; }
+.msg.ok { background: var(--reward-soft); color: var(--reward); }
+.msg.err { background: var(--warn-soft); color: var(--warn); }
+
+/* ── Tour (tour.html) ───────────────────────────────────────────────────── */
+.stop { padding: 48px 0; border-top: 1px solid var(--line); }
+.stop .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 36px; align-items: start; }
+.stop .num { font-family: var(--mono); font-size: 13px; color: var(--dim); margin: 0 0 8px; }
+.stop p { color: var(--ink-2); margin: 0 0 12px; }
+.shot { margin: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--surface); box-shadow: 0 10px 30px rgba(28,43,51,.08); }
+.shot img { width: 100%; height: auto; }
+@media (max-width: 900px) {
+  .stop .wrap { grid-template-columns: 1fr; gap: 18px; }
+}
+@media (max-width: 640px) {
+  .stop { padding: 36px 0; }
+  .shot { max-width: 360px; margin: 0 auto; }
+}
+
 /* ── Closing band and footer ────────────────────────────────────────────── */
 .band { background: var(--topbar); color: var(--on-topbar); text-align: center; padding: 56px 0; }
 .band h2 { color: var(--on-topbar); }

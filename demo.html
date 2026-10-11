@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <script src="/forward.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Try the demo — Weektally</title>
-<meta name="description" content="Three fictional companies with a story on every screen. Sign in to Weektally as an employee, a manager or an admin.">
+<title>See it working — Weektally</title>
+<meta name="description" content="Take a guided tour of Weektally with a fictional consultancy in it, or request a 7-day trial with your own demo company.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
+<script src="/trial.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -32,14 +33,18 @@
   <section>
     <div class="wrap">
       <p class="eyebrow">Demo</p>
-      <h1>Pick a company and look around</h1>
-      <p class="lede">Each company is fictional and complete: people, projects, plans and months of timesheets. Every screen has something to find. The data resets every night, so change whatever you like.</p>
-
-      <!-- Until the demo accounts exist, no company has logins.
-           When they do, replace each .soon paragraph with the three logins
-           (employee, manager, admin) and an "Open" link to weektally.app. -->
-      <div class="note"><p><strong>Demo logins are being set up.</strong> Each company will have three: an employee, a manager and an admin.</p></div>
-
+      <h1>See it working</h1>
+      <p class="lede">Take the tour: the real app, screen by screen, with a fictional consultancy in it. Or ask for a 7-day trial with a demo company of your own to try.</p>
+      <div class="cta">
+        <a class="btn" href="/tour.html">Take the tour</a>
+        <a class="btn ghost" href="#request">Request a trial</a>
+      </div>
+    </div>
+  </section>
+  <section class="alt">
+    <div class="wrap">
+      <h2>Three demo companies</h2>
+      <p class="sub">Each is fictional and complete: people, projects, plans and months of timesheets. The tour uses Kestrel Digital; a trial can use any of them.</p>
       <div class="companies">
         <article class="company">
           <h3>Kestrel Digital</h3>
@@ -50,9 +55,7 @@
             <li>A client project burning faster than planned</li>
             <li>A part-timer, a contractor on fixed hours, and two countries' holidays</li>
           </ul>
-          <div class="logins"><h4>Logins</h4><p class="soon">Opening soon</p></div>
         </article>
-
         <article class="company">
           <h3>Brenner Components</h3>
           <p class="where">Automotive supplier · Germany and Sweden</p>
@@ -62,9 +65,7 @@
             <li>EMC testing running over plan</li>
             <li>German and Swedish contracts and holidays side by side</li>
           </ul>
-          <div class="logins"><h4>Logins</h4><p class="soon">Opening soon</p></div>
         </article>
-
         <article class="company">
           <h3>Harbourline Agency</h3>
           <p class="where">Shipping agency · Australia and Singapore</p>
@@ -74,11 +75,36 @@
             <li>State holidays that differ between Victoria, New South Wales, Queensland and Western Australia</li>
             <li>One client account well over plan after berth delays</li>
           </ul>
-          <div class="logins"><h4>Logins</h4><p class="soon">Opening soon</p></div>
         </article>
       </div>
     </div>
   </section>
+  <section id="request">
+    <div class="wrap split">
+      <div>
+        <h2>Request a 7-day trial</h2>
+        <p class="sub">We set up one of the demo companies for you, with logins for an employee, a manager and an admin, and reset it so you start clean. You have it to yourself for a week.</p>
+        <p class="fine">We use what you send only to set up and follow up on your trial. It is stored in Sweden and deleted after 12 months, or sooner if you ask. Fyren Labs is responsible for it.</p>
+      </div>
+      <form class="trial" id="trialForm" method="post" action="/api/request-trial" novalidate>
+        <div class="msg" id="trialMsg" role="status" aria-live="polite" hidden></div>
+        <label>Your name<input name="name" autocomplete="name" maxlength="100" required></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+        <label>Company<input name="company" autocomplete="organization" maxlength="120" required></label>
+        <label>Team size
+          <select name="size">
+            <option value="">Choose…</option>
+            <option>1-10</option><option>11-50</option><option>51-200</option><option>201+</option>
+          </select>
+        </label>
+        <label><span>Anything we should know? <span class="opt">optional</span></span><textarea name="note" rows="3" maxlength="1000"></textarea></label>
+        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="t" value="">
+        <button class="btn" type="submit">Request a trial</button>
+      </form>
+    </div>
+  </section>
+</main>
 </main>
 
 <footer>

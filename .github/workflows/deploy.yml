@@ -19,7 +19,7 @@ jobs:
       - name: Package the site (allowlist)
         run: |
           mkdir -p _site
-          cp -R index.html demo.html 404.html forward.js site.css robots.txt staticwebapp.config.json assets _site/
+          cp -R index.html demo.html tour.html trial.js 404.html forward.js site.css robots.txt staticwebapp.config.json assets _site/
           echo "Publishing:"; (cd _site && find . -type f | sort)
       - uses: Azure/static-web-apps-deploy@v1
         with:
@@ -27,7 +27,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: _site
-          api_location: ""
+          # The managed function (the trial-request form). Built from api/
+          # in the repo, never copied into _site, so its source is not served.
+          api_location: api
           output_location: ""
           skip_app_build: true
 
